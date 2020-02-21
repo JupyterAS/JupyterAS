@@ -117,6 +117,7 @@ docker run --name jupytercgmsabefcn -d -p 8000:8888 -v `pwd`/jupyterlab:/workspa
 - [ ] 2. 收集更多常用工具集成。
 - [ ] 3. 试图解决NCL与Basemap的冲突，设置虚拟环境，集成到一个镜像。
 - [ ] 4. 修复低版本Grads无法打开`.nc`文件的问题。
+- [ ] 5. 尝试融入[气象家园网站的Grads整合版](https://bbs.06climate.com/forum.php?mod=viewthread&tid=8254&extra=page%3D3)或部分功能（南海脚本，cbarn）
 
 ## 参与项目
 
