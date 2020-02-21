@@ -111,6 +111,48 @@ docker run --name jupytercgmsabefcn -d -p 8000:8888 -v `pwd`/jupyterlab:/workspa
 
 ![https://img.bugatii100peagle.cn/2020/02/20/442292d9a302a.png](https://img.bugatii100peagle.cn/2020/02/20/442292d9a302a.png)
 
+### 改密方法
+
+进入`/home/jovyan/.jupyter`目录，打开ipython
+
+```bash
+cd /home/jovyan/.jupyter
+ipython
+```
+
+在ipython中输入
+
+```python
+from notebook.auth import passwd
+passwd()
+```
+
+在窗口中输入密码，不会显示，输入两次一样的即可。（输错了也没关系重来就行）系统会给出一串数字。比如：(下面这段数字是空密码的)
+
+```bash
+'sha1:840438352003:10c0d77ee275c741e22e6929cb7822e61ab5c256'
+```
+
+打开`/home/jovyan/.jupyter`目录下的`jupyter_notebook_config.py`文件。
+
+```bash
+nano jupyter_notebook_config.py
+```
+
+修改如下字段
+
+```bash
+c.NotebookApp.ip = '*'
+c.NotebookApp.password = 'sha1:XXXX你刚刚生成的那段数字'
+c.NotebookApp.allow_remote_access = True
+```
+
+保存退出，退出镜像，重启镜像即可。
+
+```bash
+docker restart jupytercgmsabefcn
+```
+
 ## TODO 接下来要做
 
 - [ ] 1. 国际化本项目文档。
