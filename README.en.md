@@ -62,7 +62,7 @@ docker pull registry.cn-shanghai.aliyuncs.com/bugatii100peagle/jupytercgmsabefcn
 
 ```
 mkdir -p ~/jupyterlab/workspace
-docker run --name jupytercgmsabefcn -d -p 8000:8888 -v `pwd`/jupyterlab:/workspace -w /workspace -e GRANT_SUDO=yes --user root registry.cn-shanghai.aliyuncs.com/bugatii100peagle/jupytercgmsabefcn jupyter-lab --no-browser --port=8888 --ip=0.0.0.0 --allow-root
+docker run --name jupytercgmsabefcn -d -p 8000:8888 -v `pwd`/jupyterlab:/workspace -w /workspace -e GRANT_SUDO=yes --user root registry.cn-shanghai.aliyuncs.com/bugatii100peagle/jupytercgmsabefcn:v1 jupyter-lab --no-browser --port=8888 --ip=0.0.0.0 --allow-root
 ```
 
 ### Using form Client Device
